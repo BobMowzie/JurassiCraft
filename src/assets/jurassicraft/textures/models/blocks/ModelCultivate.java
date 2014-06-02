@@ -1,4 +1,4 @@
-package assets.fossils.textures.models.blocks;
+package assets.jurassicraft.textures.models.blocks;
 
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelRenderer;
