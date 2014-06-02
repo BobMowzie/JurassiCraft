@@ -62,7 +62,9 @@ public class GhostBlock extends Block
         for (int thing : blocksToBreak)
         {
             world.setBlockToAir(x, y + thing, z);
+            if (world.getTileEntity(x, y + thing, z) != null) world.removeTileEntity(x, y + thing, z);
         }
+        super.breakBlock(world, x, y, z, block, side);
     }
 
     public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int o, float i, float d, float k)

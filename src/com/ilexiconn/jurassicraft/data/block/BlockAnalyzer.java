@@ -41,7 +41,8 @@ public class BlockAnalyzer extends BlockContainer
     @SideOnly(Side.CLIENT)
     public IIcon getIcon(int side, int metadata)
     {
-        return side == 1 ? icons[0] : (side == 0 ? icons[0] : (side != metadata ? icons[2] : icons[3]));
+        if (metadata == 0 && side == 3) return icons[3];
+        else return side == 1 ? icons[0] : (side == 0 ? icons[0] : (side != metadata ? icons[2] : icons[3]));
     }
 
     @SideOnly(Side.CLIENT)
@@ -61,18 +62,15 @@ public class BlockAnalyzer extends BlockContainer
         {
             world.setBlockMetadataWithNotify(x, y, z, 2, 2);
         }
-
-        if (l == 1)
+        else if (l == 1)
         {
             world.setBlockMetadataWithNotify(x, y, z, 5, 2);
         }
-
-        if (l == 2)
+        else if (l == 2)
         {
             world.setBlockMetadataWithNotify(x, y, z, 3, 2);
         }
-
-        if (l == 3)
+        else if (l == 3)
         {
             world.setBlockMetadataWithNotify(x, y, z, 4, 2);
         }
